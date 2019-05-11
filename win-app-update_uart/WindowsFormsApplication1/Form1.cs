@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         SerialPort myport = new SerialPort();//全局变量
-        int packlen = 512,sendtime = 1500;
+        int packlen = 512,sendtime = 2500;
         string filename = null;
         byte[] sendbuf = null;
         byte[] backupbuff = null;
@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
         byte[] byteArray;
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "中远大升级工具";
+            this.Text = "升级工具";
         }
         System.Timers.Timer aTimer = new System.Timers.Timer(500);//实例化time类
 
@@ -215,7 +215,7 @@ namespace WindowsFormsApplication1
 
         private void send_function(int i)
         {
-
+            
             //for (i = 0; i < cout + 1; i++)
             {
                
@@ -223,15 +223,27 @@ namespace WindowsFormsApplication1
                 if (i == 1)//第一包准备系统复位
                 {
                     byteArray = System.Text.Encoding.Default.GetBytes(updatebuf);
+                    byte[] x = new byte[byteArray.Length + sendbuf.Length];
+
+                    byteArray.CopyTo(x, 0);
+                    sendbuf.CopyTo(x, byteArray.Length);
+
+                    myport.Write(x, 0, 27);
+                    /*
                     myport.Write(byteArray, 0, 11);
                     myport.Write(sendbuf, 0, 16);
+                    */
                     progressBar1.Value = 1;
                 }
                 else if (i == 2)//第二包保存升级信息
                 {
-                   //byteArray = System.Text.Encoding.Default.GetBytes(updatebuf);
-                    myport.Write(byteArray,0,11);
-                    myport.Write(sendbuf, 0, 16);
+                    //byteArray = System.Text.Encoding.Default.GetBytes(updatebuf);
+                    byte[] x = new byte[byteArray.Length + sendbuf.Length];
+
+                    byteArray.CopyTo(x, 0);
+                    sendbuf.CopyTo(x, byteArray.Length);
+
+                    myport.Write(x, 0, 27);
                     progressBar1.Value = 2;
                 }
                 else if(i>=3)//开始发送升级文件
@@ -242,9 +254,16 @@ namespace WindowsFormsApplication1
                     }
                     if (i == cout+2)
                     {
-                        
-                        myport.Write(byteArray, 0, 11);
-                        myport.Write(sendbuf, length+16, m);
+                        byte[] x = new byte[byteArray.Length + sendbuf.Length];
+
+                        byteArray.CopyTo(x, 0);
+                        sendbuf.CopyTo(x, byteArray.Length);
+
+                        myport.Write(x, 0, (m+11));
+
+                       // myport.Write(byteArray, 0, 11);
+                       // myport.Write(sendbuf, length+16, m);
+
                         length += m;
                         progressBar1.Value = 100;
                         aTimer.Enabled = false;

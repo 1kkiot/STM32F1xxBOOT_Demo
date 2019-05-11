@@ -15,3 +15,12 @@ G:\c#\串口助手\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplicatio
 G:\c#\串口助手\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 G:\c#\串口助手\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
 G:\c#\串口助手\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+G:\c#\串口助手 - 副本 (2)\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
